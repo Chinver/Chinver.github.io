@@ -1,8 +1,3 @@
-    ---
-　　layout: default
-　　title: My Blog
-　　---
-
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Welcome to My Blog, I'm Chinver." />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="_site/stylesheets/stylesheet.css">
 
     <title>Chinver's Blog</title>
   </head>
@@ -26,17 +21,6 @@
 
           <h1 id="project_title">I'm Chinver.</h1>
           <h2 id="project_tagline">Welcome to My Blog.</h2>
-		  
-		  <h2>{{ page.title }}</h2>
-
-　　<p>最新文章</p>
-
-　　<ul>
-　　　　{% for post in site.posts %}
-　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-
-　　</ul>
 		
         </header>
     </div>
@@ -48,6 +32,17 @@
         <p>It's a new blog.</br>
 		I'm a Android developer, but a learner of Web developement.</br>
 		Thanks for reding. I'll come soon. </p>
+		
+	</div>
+	
+	<h2>{{ page.title }}</h2>	
+	<p>最新文章</p>
+
+	<ul>
+		{% for post in site.posts %}
+　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+　　</ul>
 		
 
   </body>
